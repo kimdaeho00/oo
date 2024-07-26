@@ -1,0 +1,23 @@
+*{
+    text-align: center;
+    font-size: 16px;
+}
+
+html{
+    background-color: azure;    
+}
+
+body{
+    width: 648px;
+    margin: auto; /*너비에서 남는 여백을 동일하게 분배 */ 
+}
+
+img{
+    width: 350px;
+    height: 350px;
+    border-radius: 350px;
+}
+
+p{
+    font-size: 1.5rem
+}
