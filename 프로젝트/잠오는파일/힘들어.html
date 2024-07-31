@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="/많이힘든파일/힘들어.css">
+</head>
+<body>   
+				<div class="cot-3">
+        <h3 class="mt-5 mb-3">신규 등록 상품</h3>
+        <button type="button" class="btn btn-outline-secondary mt-3"
+          id="btnSignUp"><a href="/회원가입/회원가입.html" class="signUp">회원가입</a></button>
+          
+        </div>
+
+      
+    <!-- </select> -->
+    <div class="dropdown-center">
+      <button class="btn btn-secondary dropdown-toggle" type="button"   
+      data-bs-toggle="dropdown" aria-expanded="false">
+        카테고리
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">상의</a></li>
+        <li><a class="dropdown-item" href="#">하의</a></li>
+        <li><a class="dropdown-item" href="#">모자</a></li>
+      </ul>           
+          <div class="form-check form-switch mt-3" id="dark">
+            
+            <input class="form-check-input" type="checkbox" 
+            id="darkModeSwitch">
+            <label class="form-check-label" for="darkModeSwitch">다크 모드</label>
+            <a href="/많이힘든파일/힘들어.js"></a>
+            
+          </div>
+            <div class="col-3">
+                <!-- input 입력창 코드를 넣어주세요 -->
+            </div>
+            
+            <div class="col-3">
+              <div class="input-group flex-nowrap">
+                <input type="text" class="form-control" placeholder="제품명을 입력해주세요." aria-label="Username" 
+                aria-describedby="addon-wrapping">
+              </div>
+              <div class="col-auto">
+                  <button type="button" class="btn 
+                  btn-outline-primary">조회</button>
+              </div>
+              </div>
+          </form>
+          <div class="container mt-3">
+        <table class="table table-sm">
+            <thead>
+              <select class="form-select form-select-sm" aria-label="Small 
+              select example">
+                <option selected>카테고리</option>
+                          <option value="1">상의</option>
+                          <option value="2">하의</option>
+                          <option value="3">모자</option>
+                          
+                        </select>
+                        </div>
+                        <div class="col-12 mt-3" id="gender">
+                            <label class="visually-hidden" 
+                            for="selectGender">성별</label>
+                            <select class="form-select" id="selectGender">
+                                <option selected disabled hidden>성별
+                                  
+                                </option>
+                                <option value="male">남성</option>
+                                <option value="female">여성</option>
+                                <option value="other">기타</option>
+                            </select>
+                        </div>
+
+            </thead>
+            <tbody id="data-table">
+                <!-- 추후 크롤링한 데이터가 들어가는 자리 -->
+            </tbody>
+        </table>
+	</div>
+    
+      <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    <script>
+      // 크롤링한 데이터를 아래와 같은 형태의 객체 배열로 가정합니다.
+      // 추후 데이터베이스에 있는 데이터를 쿼리문으로 불러 올 수 있게 쿼리르 작성해 볼 수 있음
+      const data = [
+          { category: "상의", brand: 'Supreme', product: '슈프림 박스로고 후드티', price: '390,000' },
+          { category: "하의", brand: 'DIESEL', product: '디젤 트랙 팬츠', price: '188,000' },
+          { category: "신발", brand: 'Nike', product: '에어포스 1', price: '137,000' },
+          { category: "패션잡화", brand: 'Music&Goods', product: '빵빵이 키링', price: '29,000' },
+          // ...
+      ];
+      
+      const dataTable = document.getElementById('data-table');
+      
+      data.forEach((item) => {
+          const row = dataTable.insertRow();
+          row.insertCell(0).innerHTML = item.category;
+          row.insertCell(1).innerHTML = item.brand;
+          row.insertCell(2).innerHTML = item.product;
+          row.insertCell(3).innerHTML = item.price;
+      });
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/
+    bootstrap.bundle.min.js" 
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnl
+    MuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>
