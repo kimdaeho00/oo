@@ -5,11 +5,11 @@ app = Flask(__name__)
 
 # 문장 목록
 texts = [
-    "The quick brown fox jumps over the lazy dog.",
-    "Python is an easy-to-learn programming language.",
-    "Data science is a multidisciplinary field.",
-    "Artificial intelligence is transforming many industries.",
-    "Natural language processing involves understanding human language."
+    "가나다라마바사.",
+    "사랑하는 나에게.",
+    "개발자가 될수 있는지 궁금합니다.",
+    "나는 말 하는 감자다.",
+    "모든 계절이 유서엿다."
 ]
 
 @app.route('/')
